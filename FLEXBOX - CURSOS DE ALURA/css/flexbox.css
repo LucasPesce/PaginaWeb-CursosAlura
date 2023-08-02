@@ -1,0 +1,123 @@
+/*  ENCABEZADO - PANEL DE NAVEGACION    */
+.headerPrincipal .container{        
+    display: flex;                  /* 1) Configura las box una al lado de la otra  */
+    align-items: center;            /* 2) Centra* los elementos al medio verticalmente */
+    justify-content: space-between; /* 3) Crea un espacio entre ambos elementos (titulo y menu)*/
+}
+
+.headerPrincipal-nav{
+    display: flex;                  /* 4) Configura las box una al lado de la otra */
+}
+
+.headerPrincipal-nav-link-app{
+    order: -1;                      /*  Modifica la posicion del elemento en la lista. (-1, porque se adelanta al elemento 0)   */
+}
+
+/*  CUERPO - CURSOS */
+.contenidoPrincipal-cursos{
+    display: flex;
+    flex-wrap: wrap;
+}
+.contenidoPrincipal-cursos-link{
+    display: flex;
+    width: 23%;
+}
+
+/* CUERPO - VIDEO DE ALURA*/
+.videoSobre .container{
+    display: flex;
+    justify-content: center;          /* Centro todo el contenido al medio */
+}
+.videoSobre-sobre{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.videoSobre-video{
+    flex-grow: 0.5;                 /*  Ensancha el elemento    */
+    flex-shrink: 1;                 /*  Angosta el elemento    */
+}
+.videoSobre-sobre-list{
+    flex-grow: 2;
+}
+
+/*  CUERPO - MAPA DE CURSOS */
+.rodapePrincipal-navMap-list{
+    display: flex;
+    flex-direction: column;            /* Dispone los sublementos como en una columna */
+    height: 260px;                     /* Indica la alutra que tendra cada columna  */
+    flex-wrap: wrap;                   /* Indica que cuando se alcance el tope maximo de altura, se disponga el contenido en la siguiente columna */ 
+}
+
+/*  PIE DE PAGINA - PATROCINADORES */
+.rodapePrincipal-patrocinadores .container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.rodapePrincipal-patrocinadores-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;      /*  Crea un espaciado alrededor de cada elemento */
+    width: 70%;
+    margin-right: 5%;
+}
+
+.rodapePrincipal-contatoForm{
+    width: 25%;
+}
+
+.rodapePrincipal-contatoForm-fieldset{
+    display: flex;
+}
+
+/* PLATAFORMA MOBIL*/
+@media (max-width: 768px){              /*  DIMENSION STANDAR MOBILES*/
+
+    /* ENCABEZADO - PANEL DE NAVEGACION */
+    .headerPrincipal .container{
+        flex-direction: column;
+        align-items: initial;           /*  Devuelve a la alineacion inicial (hacia la izquierda)   */
+        text-align: center;             /*  Centra los titlulos del navegador   */
+    }
+    .headerPrincipal-nav{
+        flex-direction: column;
+    }
+
+    /*  CUERPO - CURSOS */
+    .contenidoPrincipal-cursos-link{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* CUERPO - VIDEO DE ALURA*/
+    .videoSobre .container{
+        flex-direction: column;
+    }  
+    .videoSobre-video{
+        flex-shrink: 2;                 /*  Angosta el elemento    */
+    } 
+ 
+    /*  CUERPO - MAPA DE CURSOS */
+    .rodapePrincipal-navMap-list{
+        height: auto;                   /* Coloca automaticamente las columnas en vertical (sin quiebre)    */
+        flex-wrap: nowrap;              /*  Quita el quiebre automatico*/
+    }
+
+    /*  PIE DE PAGINA - PATROCINADORES */
+    .rodapePrincipal-patrocinadores .container{
+        flex-direction: column;
+    }
+    .rodapePrincipal-patrocinadores-list{
+        align-items: center;           /* Centro todo el contenido al medio */
+        width: 100%;
+        margin: 0;
+    }
+    .rodapePrincipal-contatoForm{
+        width: 100%;
+    }
+    .rodapePrincipal-contatoForm-fieldset{
+       justify-content: center;
+    }
+}
+
